@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Coding Group Weather</title>
+	
+	  <meta charset="UTF-8">
+          <!-- icon shrtcut link -->
+         <link rel="shortcut icon" href="./img/icon-wather.png" /> 
+         <link rel="apple-touch-icon" sizes="180x180" href="./img/icon-wather.png">
+ 
+          
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> 
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+			
+			<link rel="stylesheet" type="text/css" href="wther.css">
+            
+                <script type="text/javascript" >
+ var x="";
+
+ function myFunction() {
+	var x = document.getElementById("mySelect").value;
+ 
+  document.getElementById("demo").innerHTML = "You selected: " + x;
+ 
+ 
+   
+var city =x; 
+
+
+$.getJSON("http://api.openweathermap.org/data/2.5/weather?q="+ city +"&&units=metric&APPID=78ba2ea151e4e11abd2bd75b1255dc75", function (data) {
+
+    console.log(data);
+      var pic =["./img/krch.png","./img/red.png","./img/jed.png","./img/ny.png"]
+     var np =pic[3];
+     var jp =pic[2];
+     var rp =pic[1];
+     var kp =pic[0];
+
+         
+ 
+	var icon ="https://openweathermap.org/img/w/" + data.weather[0].icon+".png";
+	
+	$(".icon").attr("src",icon);
+     var wthr =data.weather[0].main;
+     $(".wather").text(wthr);
+     var temp =data.main.temp;
+     
+     $(".temp").text(temp);
+       
+       if (x=="karachi"){
+        $("body").css("background-image",'url(' + kp + ')');
+
+       }
+       if (x=="jeddah"){
+        $("body").css("background-image",'url(' + jp + ')');
+
+       }
+       if (x=="new york"){
+        $("body").css("background-image",'url(' + np + ')');
+
+       }
+       if (x=="riyadh"){
+        $("body").css("background-image",'url(' + rp + ')');
+
+       }
+});}</script>
+		    
+			
+		</head>
+		<body>
+			<div id="med" class="container-fluid" name="md">
+
+				<select  id="mySelect" class="form-control"  onchange="myFunction()" style="
+				font-size: 30px; 
+				height: 195px;
+				color: #d26c9a;
+                background-color: #ffffffa1;
+                background-image: none;
+                text-align: center;
+  text-align-last: center;
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 50px; 
+  width: 305px;
+  margin-left:35%; >
+
+		        <option value="jeddah">jeddah</option>
+                         <option value="jeddah">jeddah</option>
+		        <option value="new york">new york</option>
+		        <option value="karachi">karachi </option>
+		        <option value="riyadh">riyadh</option>
+
+		        </select>
+
+		        <br>
+		        <div class="wather-continer" style="
+               margin-left: 250px;
+                width: 400px;
+                height: 200px;
+                margin-right: 0px;
+                color: white;
+                text-align: center;
+                font-family: monospace;
+                text-shadow: 2px rgb(65,105,255) ;
+                font-size: 120px;">
+               <p id="cty"></p>
+			    <img class="icon" style="width:160px; padding-left:50px;">
+
+		            <p class="wather" style="padding-left: 130px;
+                            position: center;
+                            width: 270px;
+                            height: 100px;
+                            text-shadow: #dac7e0 3px 2px 1px, #f18fd3 4px 3px 1px, whitesmoke 5px 5px 4px;
+                            font-family: 'Lobster', cursive;
+                            color:  rgba(255, 215, 71, 0.85);
+                            font-size: 100px;" ></p>
+			    <p class="temp" style="
+                            padding-left: 130px;
+                            position: center;
+                            width: 280px;
+                            height: 100px;
+                            text-shadow: #f9914b 3px 2px 1px, #f7f7f7 4px 3px 1px, white 5px 5px 4px;
+                            font-family: 'Lobster', cursive;
+                            color: rgba(255, 215, 71, 0.85);
+                            font-size: 100px;" >
+                            </p>
+                            <footer style="
+ text-shadow: #ffffff 3px 2px 1px, #f18fd3 4px 3px 1px, black 5px 5px 4px;
+    font-family: 'Lobster', cursive;
+    color: rgb(103, 249, 142);
+    font-size: 80px;
+    white-space: nowrap;
+    display: block;
+    text-align:center;
+    margin-left:-55%;"> &#169; Power By Cooding Group 
+                        </footer>
+                        
+		        </div>
+       		        </div>
+                        
+                        <p id="demo" style="
+                      font-size: 20px;
+                       color: aqua;">
+                          </p>
+                      
+		        </body>
+		        </html>

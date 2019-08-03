@@ -1,0 +1,10 @@
+http://api.openweathermap.org/data/2.5/weather?q=jeddah&APPID=78ba2ea151e4e11abd2bd75b1255dc75
+
+
+
+
+
+-------------------
+IN CALSIUS 
+-------------------------
+http://api.openweathermap.org/data/2.5/weather?q=jeddah&&units=metric&APPID=78ba2ea151e4e11abd2bd75b1255dc75

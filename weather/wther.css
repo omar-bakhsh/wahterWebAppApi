@@ -1,0 +1,43 @@
+
+body{
+text-alagin:center;
+margin: 0px;
+display: flex;
+align-items: center;
+background-image: url("./img/icon-wather.png");
+background-repeat: no-repeat;
+ background-size:cover;
+background-position: center;
+z-index: -10px;
+height: 100vh;
+   width: 100vw;
+};
+.form-control{
+	
+	width: 50px;
+	font-size: 50px;
+	background-color: #95edff30;
+
+}
+
+ #med {
+  padding-top: 40vh;
+ background-color: #74ddf35c;
+ position: absolute;
+ align-items: center;
+ height: 100vh;
+     width: 100vw;
+};
+.wather-continer{
+	   padding: 70px;
+   font-family: 'Lobster', cursive;
+   color: white;
+   font-size: 100px;
+  position: center;
+  align-items: center;
+  width: 100px;
+ 
+};
+
+#mySelect{
+ };
